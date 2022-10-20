@@ -1,0 +1,254 @@
+#top{
+    display: flex;
+    border: 5px solid rgb(0 0 0);
+    height: 120px;
+}
+:root {
+    --color-1: #ffffff;
+    --color-2: #ffffff;
+    --color-3: #fd0000;
+    --color-4: #05bf08;
+    --color-5: #00f020;
+    --angle: 0deg;
+}
+html{
+    height: 85vh;
+}
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+} */
+
+#text_top {
+    color: #fff;
+    text-align: center;
+    font-family: 'Copse';
+    font-size: 48pt;
+    font-weight: 900;
+    width: 100%;
+    padding-top: 10pt;
+    -webkit-text-stroke: 1px black;
+    background: linear-gradient(var(--angle), 
+    var(--color-1) 19%, 
+    transparent 19%, 
+    transparent 20%, 
+    var(--color-2) 20%, 
+    var(--color-2) 39%, 
+    transparent 39%, 
+    transparent 40%, 
+    var(--color-3) 40%, 
+    var(--color-3) 59%, 
+    transparent 59%, 
+    transparent 60%, 
+    var(--color-4) 60%, 
+    var(--color-4) 79%, 
+    transparent 79%, 
+    transparent 80%, 
+    var(--color-5) 80%);
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+section#left_and_right_side {
+
+    text-align: center;
+    height: 85vh;
+    position: relative;
+}
+section#leftside {
+    text-align: center;
+    height: 85vh;
+    width: 78%;
+    position: absolute;
+    /* border-style: dotted; */
+}
+div#boxdiv {
+    position: relative;
+    /* border-style: dotted; */
+    height: 50%;
+}
+.box{
+    position: absolute;
+    /* border-style: dotted; */
+    width: 45%;
+    height: 40%;
+    margin: 35px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+div#box1 {
+    
+}
+div#box2 {
+    right:0px;
+}
+div#box3{
+    bottom:0px;
+    left:0px;
+}
+div#box4 {
+    bottom: 0px;
+    right: 0px;
+}
+.boxtext {
+    /* border-style: dashed; */
+    font-size: xx-large;
+    font-weight: 600;
+    -webkit-background-clip: text;
+    width: 100%;
+    height: 20%;
+    font-family: Snell Roundhand, cursive;
+}
+.descriptionbox{
+    /* border-style: dashed; */
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    
+}
+.submitbox {
+    bottom: 0px;
+    position: absolute;
+    /* border-style: dotted; */
+    width: 100%;
+    height: 23%;
+    bottom: 10px;
+}
+
+.plusbutton {
+    position: absolute;
+    border-radius: 15px;
+    width: 50px;
+    height: 100%;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid hsla(124, 92%, 20%, 0.892);
+    left: 46%;
+    display: inline-block;
+    line-height: 24px;
+    text-align: center;
+}
+.plusbutton:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 4px;
+    width: 50%;
+    background: hsla(124, 92%, 20%, 0.892);
+    top: 50%;
+    left: 50%;
+}
+.plusbutton:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: hsla(124, 92%, 20%, 0.892);
+    height: 50%;
+    width: 4px;
+}
+.plusbutton:hover:before,
+.plusbutton:hover:after {
+    background: #fff;
+    transition: 0.2s;
+}
+.plusbutton:hover {
+    background-color:hsla(124, 92%, 20%, 0.892);
+    transition: 0.2s;
+}
+
+
+/* button.plusbutton{
+    position: absolute;
+    border-radius: 15px;
+    width: 11%;
+    height: 100%;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid hsla(124, 92%, 20%, 0.892);
+
+    * Mittig 
+    left: 46%;
+}
+
+
+.plus {
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.plus::before {
+    content: "+";
+}
+.alt {
+    border: none;
+    margin: 10px;
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #fff 90deg, #000 0) calc(100% + var(--b)/2) calc(100% + var(--b)/2)/ calc(50% + var(--b)) calc(50% + var(--b));
+}
+.radius {
+    border-radius: 50%;
+} */
+
+
+
+section#rightside {
+    text-align: center;
+    height: 85vh;
+    width: 20%;
+    position: absolute;
+    border-style: solid;
+    right: 0px;
+    border-top: 0;
+}
+div#outputboxfororder {
+    height: 90%;
+}
+div#submitbutton{
+    height: 10%;
+    bottom: 15px;
+    position: absolute;
+    width: 97%;
+    right: 6px;
+}
+button#submitorderbutton {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+    font-size: -webkit-xxx-large;
+    font-family: Snell Roundhand, cursive;
+}
+#submitorderbutton:hover {
+    background-color: hsla(124, 92%, 28%, 0.814);
+    transition: 0.2s;
+    color:white;
+}
