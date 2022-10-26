@@ -1,6 +1,5 @@
 #top{
     display: flex;
-    border: 5px solid rgb(0 0 0);
     height: 120px;
 }
 :root {
@@ -13,19 +12,13 @@
 }
 html{
     height: 85vh;
+    background:url(../pictures/seamless-pattern-with-classical-italian-foods_80590-1174.jpeg);
 }
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #000;
-} */
-
 #text_top {
     color: #fff;
     text-align: center;
     font-family: 'Copse';
-    font-size: 48pt;
+    font-size: 65pt;
     font-weight: 900;
     width: 100%;
     padding-top: 10pt;
@@ -52,6 +45,7 @@ html{
     -webkit-background-clip: text;
     color: transparent;
     animation: 10s rotate linear infinite;
+    
 }
 
 @keyframes rotate {
@@ -59,12 +53,12 @@ html{
         --angle: 360deg;
     }
 }
-
 @property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
+
 
 section#left_and_right_side {
 
@@ -72,13 +66,29 @@ section#left_and_right_side {
     height: 85vh;
     position: relative;
 }
+#left_and_right_side::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
+}
+
+
+
+
+
 section#leftside {
     text-align: center;
     height: 85vh;
-    width: 78%;
+    width: 67%;
     position: absolute;
     /* border-style: dotted; */
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    border-radius:35px;
+    overflow: hidden;
 }
+#leftside::-webkit-scrollbar {
+    display: none;
+}
+
 div#boxdiv {
     position: relative;
     /* border-style: dotted; */
@@ -86,15 +96,29 @@ div#boxdiv {
 }
 .box{
     position: absolute;
-    /* border-style: dotted; */
     width: 45%;
-    height: 40%;
-    margin: 35px;
+    height: 39%;
+    margin: 32px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     border-radius: 25px;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(0deg, lightgrey, lightgrey) no-repeat right bottom / 0 var(--bg-h);
+    background-color: white;
+    transition: background-size 350ms;
+    --bg-h: 100%;
+    
 }
+
+.box:where(:hover, :focus-visible) {
+    background-size: 100% var(--bg-h);
+    background-position-x: left;
+}
+
+
+
+
+
 div#box1 {
     
 }
@@ -109,6 +133,7 @@ div#box4 {
     bottom: 0px;
     right: 0px;
 }
+
 .boxtext {
     /* border-style: dashed; */
     font-size: xx-large;
@@ -127,6 +152,17 @@ div#box4 {
     width: 100%;
     
 }
+p.price {
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    margin: auto;
+    right: 0px;
+    padding-right: 85px;
+    top: 0px;
+    color: darkred;
+}
+
 .submitbox {
     bottom: 0px;
     position: absolute;
@@ -135,7 +171,6 @@ div#box4 {
     height: 23%;
     bottom: 10px;
 }
-
 .plusbutton {
     position: absolute;
     border-radius: 15px;
@@ -180,43 +215,90 @@ div#box4 {
 }
 
 
-/* button.plusbutton{
-    position: absolute;
-    border-radius: 15px;
-    width: 11%;
+section#extrasfield {
+    border: solid;
+    border-right: 0;
     height: 100%;
-    background: #fff;
-    cursor: pointer;
-    border: 2px solid hsla(124, 92%, 20%, 0.892);
-
-    * Mittig 
-    left: 46%;
+    width: 12%;
+    position: absolute;
+    right: 20%;
+    background-color: white;
+    display: list-item;
+    border-radius: 35px;
+}
+#extrasfield::-webkit-scrollbar {
+    display: none;
+}
+p#extrasheading{
+    font-size: -webkit-xxx-large;
+    height: 8%;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    color: darkorange;
+    text-shadow: 1px 1px #ff0000;
 }
 
 
-.plus {
-    height: 24px;
-    width: 24px;
-    display: inline-block;
-    background-color: black;
-    color: white;
-    font-size: 24px;
-    line-height: 24px;
-    text-align: center;
-}
-
-.plus::before {
-    content: "+";
-}
-.alt {
+.dropbtn {
+    background-color: #cdcfcb;
+    color: #000000;
+    padding: 16px;
+    font-size: 16px;
     border: none;
-    margin: 10px;
-    background:
-        conic-gradient(from 90deg at var(--b) var(--b), #fff 90deg, #000 0) calc(100% + var(--b)/2) calc(100% + var(--b)/2)/ calc(50% + var(--b)) calc(50% + var(--b));
+    cursor: pointer;
+    height: 100px;
+    width: 100%;
+    font-size: xx-large;
+    border-radius: 25px;
+    font-family: Snell Roundhand, cursive;
+    font-weight: 600;
+    padding-top: 5px;
 }
-.radius {
-    border-radius: 50%;
-} */
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 96%;
+    padding-top: 20px;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    width: 100%;
+    font-size:xx-large;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 35px;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+    color:white;
+}
+
+
+
+
 
 
 
@@ -227,11 +309,41 @@ section#rightside {
     position: absolute;
     border-style: solid;
     right: 0px;
-    border-top: 0;
+    background-color: white;
+    border-radius: 35px;
+    background:url(../pictures/depositphotos_277815962-stock-photo-white-paper-sheet-lines-background.jpg);
+    background-repeat:repeat-y;
+    
 }
 div#outputboxfororder {
     height: 90%;
+    text-align: center;
+    font-size: xxx-large;
+    padding-left: 15px;
+    padding-top: 5px;
+    overflow: scroll;
 }
+#outputboxfororder::-webkit-scrollbar {
+    display: none;
+}
+
+input#notes {
+    position: absolute;
+    bottom: 12%;
+    border-style: ridge;
+    left: 2%;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 35px;
+    height: 10%;
+    width: 96%;
+    right: 6px;
+    font-size: -webkit-xxx-large;
+    font-family: Snell Roundhand, cursive;
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
 div#submitbutton{
     height: 10%;
     bottom: 15px;
@@ -246,6 +358,7 @@ button#submitorderbutton {
     border-radius: 35px;
     font-size: -webkit-xxx-large;
     font-family: Snell Roundhand, cursive;
+    color:green;
 }
 #submitorderbutton:hover {
     background-color: hsla(124, 92%, 28%, 0.814);
